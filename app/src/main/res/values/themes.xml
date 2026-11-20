@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- The real UI is drawn entirely by the native GLES renderer; this
+         theme only needs to get the system chrome out of the way. -->
+    <style name="Theme.FastVendingKiosk" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@color/kiosk_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/kiosk_accent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <!-- Let the native renderer draw under notch/camera-cutout areas
+             instead of Android reserving a blank bar for them, in both
+             orientations. No-op below API 28. -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="28">shortEdges</item>
+    </style>
+</resources>
